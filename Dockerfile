@@ -9,6 +9,6 @@ RUN tar -zxpf cmdstan-2.18.1.tar.gz
 RUN ln -s cmdstan-2.18.1 cmdstan
 RUN cd cmdstan; make build
 
-RUN echo "CmdStan home directory is" $PWD/cmdstan
+RUN cd cmdstan; echo "CmdStan home directory is" $PWD
 
 ENV NAME cmdstan-docker
