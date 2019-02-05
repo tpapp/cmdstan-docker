@@ -1,0 +1,21 @@
+env:
+  - IMAGE=cmdstan-docker
+
+os: linux
+
+dist: trusty
+
+sudo: required
+
+services:
+  - docker
+
+notifications:
+  email: false
+
+script:
+  - docker build --tag $DOCKER_USER/$IMAGE .
+  - docker run -t -a STDIN -a STDERR -a STDOUT cmdstan/bin/stanc
+
+# after_success:
+#   - ./push-script.sh
