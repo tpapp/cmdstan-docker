@@ -1,7 +1,8 @@
 #!/bin/sh
 
-- set -e
-- if [ "$TRAVIS_BRANCH" != "master" ]
+set -e                          # stop on error
+
+if [ "$TRAVIS_BRANCH" != "master" ]
 then
     echo "Not on master, not pushing Docker image."
     exit 0
