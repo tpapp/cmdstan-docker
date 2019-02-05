@@ -17,5 +17,5 @@ script:
   - docker build --tag $DOCKER_USER/$IMAGE .
   - docker run -t -a STDIN -a STDERR -a STDOUT cmdstan/bin/stanc --version
 
-# after_success:
-#   - ./push-script.sh
+after_success:
+  - ./push-script.sh
