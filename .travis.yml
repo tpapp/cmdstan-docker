@@ -16,7 +16,7 @@ notifications:
 script:
   - docker build --tag $DOCKER_USER/$IMAGE .
   - docker run -t -a STDIN -a STDERR -a STDOUT $DOCKER_USER/$IMAGE cmdstan/bin/stanc --version
-  - docker run -t -a STDIN -a STDERR -a STDOUT $DOCKER_USER/$IMAGE 'make -C cmdstan examples/bernoulli/bernoulli'
+  - docker run -t -a STDIN -a STDERR -a STDOUT $DOCKER_USER/$IMAGE make -C cmdstan examples/bernoulli/bernoulli
 
 after_success:
   - ./push-script.sh
