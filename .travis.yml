@@ -1,4 +1,5 @@
 env:
+  - DOCKER_USER=tkpapp
   - IMAGE=cmdstan-docker
 
 os: linux
