@@ -1,6 +1,5 @@
 env:
-  - DOCKER_USER=tkpapp
-  - IMAGE=cmdstan-docker
+  - TAG=tkpapp/cmdstan-docker
 
 os: linux
 
@@ -15,6 +14,6 @@ notifications:
   email: false
 
 script:
-  - docker build --tag $DOCKER_USER/$IMAGE .
-  - docker run -t -a STDIN -a STDERR -a STDOUT $DOCKER_USER/$IMAGE cmdstan/bin/stanc --version
-  - docker run -t -a STDIN -a STDERR -a STDOUT $DOCKER_USER/$IMAGE make -C cmdstan examples/bernoulli/bernoulli
+  - docker build --tag $TAG .
+  - docker run -t -a STDIN -a STDERR -a STDOUT $TAG cmdstan/bin/stanc --version
+  - docker run -t -a STDIN -a STDERR -a STDOUT $TAG make -C cmdstan examples/bernoulli/bernoulli
