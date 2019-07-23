@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:buster
 MAINTAINER Tamas K. Papp <tkpapp@gmail.com>
 
 RUN apt-get update
