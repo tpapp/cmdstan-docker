@@ -1,5 +1,7 @@
-FROM debian:jessie
+FROM debian:buster
 MAINTAINER Tamas K. Papp <tkpapp@gmail.com>
+
+WORKDIR /cmdstan
 
 RUN apt-get update
 RUN apt-get install --no-install-recommends -qq wget ca-certificates make g++
